@@ -1,0 +1,15 @@
+[package]
+name = "push2_display"
+version = "0.1.0"
+authors = ["Marc Bracher"]
+edition = "2018"
+description="Ableton Push2 Embedded-graphics display driver"
+license="MIT OR Apache-2.0"
+readme = "./README.md"
+keywords = ["embedded-graphics", "graphics", "embedded", "push2"]
+repository = "https://github.com/mbracher/push2_display"
+
+[dependencies]
+embedded-graphics = "0.6.2"
+rusb = "0.6"
+thiserror = "1.0.22"
