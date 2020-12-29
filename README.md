@@ -35,7 +35,7 @@ cargo run --examples hello
 
 [Embedded graphics](https://github.com/embedded-graphics/embedded-graphics)
 
-##License
+## License
 
 Licensed under either of
 
