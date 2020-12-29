@@ -1,5 +1,8 @@
 # push2_display
 
+[![Crate](https://img.shields.io/crates/v/push2_display.svg)](https://crates.io/crates/push2_display)
+[![API](https://docs.rs/push2_display/badge.svg)](https://docs.rs/push2_display)
+
 {{readme}}
 
 ##License

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix layout of license section in readme
 - In doc and readme add link to photo of hello example on Push2 device
+- Add badges to crates.io and docs.rs in readme template
 
 ## [0.1.0] - 2020-12-28
 
