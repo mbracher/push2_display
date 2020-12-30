@@ -3,7 +3,7 @@
 [![Crate](https://img.shields.io/crates/v/push2_display.svg)](https://crates.io/crates/push2_display)
 [![API](https://docs.rs/push2_display/badge.svg)](https://docs.rs/push2_display)
 
-This rust library implements the Embedded-graphics-core `DrawTarget` trait,
+This Rust library implements the Embedded-graphics-core `DrawTarget` trait,
 making it easy to draw 2D graphics primitives on the Push2 display.
 
 Ableton Push2 is a MIDI instrument with a 960x160 RGB LCD display.
