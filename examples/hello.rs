@@ -7,7 +7,7 @@ use embedded_graphics::{
     pixelcolor::{Bgr565},
 
     primitives::Rectangle,
-    style:: {PrimitiveStyle, TextStyle},
+    style:: {PrimitiveStyle, MonoTextStyle},
     prelude::*,
 };
 use push2_display::Push2Display;
@@ -21,7 +21,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
     loop {
         display.clear(Bgr565::BLACK)?;
 
-        Rectangle::new(Point::zero(), Point::new(display.size().width as i32 - 1, display.size().height as i32 - 1))
+        Rectangle::new(Point::zero(), display.size())
             .into_styled(PrimitiveStyle::with_stroke(Bgr565::WHITE, 1))
             .draw(&mut display)?;
 
@@ -31,7 +31,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
         }
 
         Text::new("Hello!", position)
-            .into_styled(TextStyle::new(Font12x16, Bgr565::BLUE))
+            .into_styled(MonoTextStyle::new(Font12x16, Bgr565::BLUE))
             .draw(&mut display)?;
 
         display.flush()?; // if no frame arrives in 2 seconds, the display is turned black

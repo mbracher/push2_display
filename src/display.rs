@@ -1,4 +1,4 @@
-use embedded_graphics::{
+use embedded_graphics_core::{
     pixelcolor::{Bgr565, IntoStorage},
     geometry::Size,
     prelude::*,
@@ -89,19 +89,24 @@ impl Push2Display {
     }
 }
 
-impl DrawTarget<Bgr565> for Push2Display {
+impl DrawTarget for Push2Display {
+    type Color = Bgr565;
     type Error = core::convert::Infallible;
 
-    fn draw_pixel(&mut self, pixel: Pixel<Bgr565>) -> Result<(), Self::Error> {
-        let Pixel(point, color) = pixel;
-        if let Ok((x @ 0..=959, y @ 0..=159)) = point.try_into() {
-            let index: u32 = x + y * 960;
-            self.frame_buffer[index as usize] = color.into_storage();
+    fn draw_iter<I>(&mut self, pixels: I) -> Result<(), Self::Error> where
+        I: IntoIterator<Item=Pixel<Self::Color>> {
+        for Pixel(point, color) in pixels.into_iter() {
+            if let Ok((x @ 0..=959, y @ 0..=159)) = point.try_into() {
+                let index: u32 = x + y * 960;
+                self.frame_buffer[index as usize] = color.into_storage();
+            }
         }
 
         Ok(())
     }
+}
 
+impl OriginDimensions for Push2Display {
     fn size(&self) -> Size {
         Size::new(DISPLAY_WIDTH as u32, DISPLAY_HEIGHT as u32)
     }
