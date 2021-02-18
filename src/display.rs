@@ -9,7 +9,7 @@ use thiserror::Error;
 
 pub struct Push2Display {
     handle: DeviceHandle<Context>,
-    frame_buffer: [u16; DISPLAY_WIDTH * DISPLAY_HEIGHT],
+    frame_buffer: Box<[u16]>,
 }
 
 #[derive(Error, Debug)]
@@ -52,7 +52,7 @@ impl Push2Display {
         let (_, _, mut handle) = open_device(&mut context, PUSH_2_VENDOR_ID, PUSH_2_PRODUCT_ID).ok_or( Push2DisplayError::Push2NotFound)?;
 
         handle.claim_interface(0)?;
-        let buffer : [u16; DISPLAY_WIDTH * DISPLAY_HEIGHT] = [0; DISPLAY_WIDTH * DISPLAY_HEIGHT];
+        let buffer: Box<[u16]>  = vec![0;DISPLAY_WIDTH * DISPLAY_HEIGHT].into_boxed_slice();
 
         Ok(Push2Display {
             handle,
