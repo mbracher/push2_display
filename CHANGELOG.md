@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [1.0.0-alpha.2] - 2021-02-22
+
+### Changed
+
+- Updated embedded-graphics-core to 0.2.0
+- Allocate framebuffer on heap instead of stack
+- For hello example, update embedded-graphics to 0.7.0-alpha.3
+
 ## [1.0.0-alpha.1]
 
 ### Changed
@@ -41,6 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Very basic hello example
 - Photo of hello example on the Ableton Push2 display
 
-[unreleased]: https://github.com/mbracher/push2_display/compare/0.1.1...HEAD
+[unreleased]: https://github.com/mbracher/push2_display/compare/1.0.0-alpha.2...HEAD
+[1.0.0-alpha.2]: https://github.com/mbracher/push2_display/compare/1.0.0-alpha.1...1.0.0-alpha.2
+[1.0.0-alpha.1]: https://github.com/mbracher/push2_display/compare/0.1.1...1.0.0-alpha.1
 [0.1.1]: https://github.com/mbracher/push2_display/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/mbracher/push2_display/releases/tag/0.1.0
