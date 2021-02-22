@@ -1,6 +1,6 @@
 [package]
 name = "push2_display"
-version = "1.0.0-alpha.1"
+version = "1.0.0-alpha.2"
 authors = ["Marc Bracher"]
 edition = "2018"
 description="Ableton Push2 Embedded-graphics display driver"
