@@ -3,15 +3,14 @@
 //! A simple example displaying some graphics and text on the Ableton Push2 display.
 
 use embedded_graphics::{
-    mono_font::{ascii::{Font10x20}, MonoTextStyle, MonoTextStyleBuilder},
-    pixelcolor::{Bgr565},
-
-    primitives::{Rectangle, PrimitiveStyle},
-    text::Text,
+    mono_font::{ascii::Font10x20, MonoTextStyle},
+    pixelcolor::Bgr565,
     prelude::*,
+    primitives::{PrimitiveStyle, Rectangle},
+    text::Text,
 };
 use push2_display::Push2Display;
-use std::{thread, time, error};
+use std::{error, thread, time};
 
 fn main() -> Result<(), Box<dyn error::Error>> {
     let mut display = Push2Display::new()?;
@@ -35,6 +34,6 @@ fn main() -> Result<(), Box<dyn error::Error>> {
             .draw(&mut display)?;
 
         display.flush()?; // if no frame arrives in 2 seconds, the display is turned black
-        thread::sleep(time::Duration::from_millis(1000/60));
+        thread::sleep(time::Duration::from_millis(1000 / 60));
     }
 }

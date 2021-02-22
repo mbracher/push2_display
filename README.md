@@ -25,7 +25,7 @@ display.flush()?;
 git clone https://github.com/mbracher/push2_display
 cd push2_display
 
-cargo run --examples hello
+cargo run --example hello
 ```
 
 ![Photo of hello example on Push2 device](https://raw.githubusercontent.com/mbracher/push2_display/master/doc/assets/push2hello.jpg)
