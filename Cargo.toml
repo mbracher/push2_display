@@ -1,6 +1,6 @@
 [package]
 name = "push2_display"
-version = "1.0.0-alpha.2"
+version = "1.0.0-alpha.3"
 authors = ["Marc Bracher"]
 edition = "2018"
 description="Ableton Push2 Embedded-graphics display driver"
@@ -10,14 +10,14 @@ keywords = ["embedded-graphics", "graphics", "embedded", "push2"]
 repository = "https://github.com/mbracher/push2_display"
 
 [dependencies]
-embedded-graphics-core = "0.2.0"
-rusb = "0.6"
-thiserror = "1.0.22"
+embedded-graphics-core = "0.3.3"
+rusb = "0.9.1"
+thiserror = "1.0.30"
 
 
 [[example]]
 name = "hello"
 
 [dev_dependencies]
-embedded-graphics = "0.7.0-alpha.3"
+embedded-graphics = "0.7.1"
 

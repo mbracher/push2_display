@@ -3,7 +3,7 @@
 //! A simple example displaying some graphics and text on the Ableton Push2 display.
 
 use embedded_graphics::{
-    mono_font::{ascii::Font10x20, MonoTextStyle},
+    mono_font::{ascii::FONT_10X20, MonoTextStyle},
     pixelcolor::Bgr565,
     prelude::*,
     primitives::{PrimitiveStyle, Rectangle},
@@ -19,7 +19,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
     let mut step = 4;
     loop {
         display.clear(Bgr565::BLACK)?;
-        let text_style = MonoTextStyle::new(Font10x20, Bgr565::WHITE);
+        let text_style = MonoTextStyle::new(&FONT_10X20, Bgr565::WHITE);
         Rectangle::new(Point::zero(), display.size())
             .into_styled(PrimitiveStyle::with_stroke(Bgr565::WHITE, 1))
             .draw(&mut display)?;
@@ -29,8 +29,7 @@ fn main() -> Result<(), Box<dyn error::Error>> {
             step *= -1;
         }
 
-        Text::new("Hello!", position)
-            .into_styled(text_style)
+        Text::new("Hello!", position, text_style)
             .draw(&mut display)?;
 
         display.flush()?; // if no frame arrives in 2 seconds, the display is turned black
