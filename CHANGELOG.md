@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
+## [1.0.0-alpha.3] - 2022-04-22
+
+### Changed
+
+- Updated embedded-graphics-core to 0.3.3
+- Updated rusb to 0.9.1
+- Updated thiserror to 1.0.30
+- For hello example, update embedded-graphics to 0.7.1
+
 ## [1.0.0-alpha.2] - 2021-02-22
 
 ### Changed
