@@ -12,10 +12,18 @@ Push2 is a USB composite device with a MIDI interface and a generic bulk data in
 ## Examples
 
 ```rust
-let mut display = Push2Display::new()?;
+use embedded_graphics::{
+    mono_font::{ascii::FONT_10X20, MonoTextStyle},
+    pixelcolor::{PixelColor, Bgr565},
+    prelude::*,
+    text::Text,
+};
+use push2_display::Push2Display;
 
-Text::new("Hello!", Point::new(400, 70))
-    .into_styled(TextStyle::new(Font6x8, Bgr565::BLUE))
+let mut display = Push2Display::new()?;
+let text_style = MonoTextStyle::new(&FONT_10X20, Bgr565::WHITE);
+
+Text::new("Hello!", Point::new(400, 70), &text_style)
     .draw(&mut display)?;
 
 display.flush()?;
@@ -34,6 +42,11 @@ cargo run --example hello
 [Ableton Push Interface](https://github.com/Ableton/push-interface)
 
 [Embedded graphics](https://github.com/embedded-graphics/embedded-graphics)
+
+## Projects using push2_display
+- [push2_pong](https://github.com/mbracher/push2_pong): two player ping pong game on the Ableton Push2 midi controller
+
+- [push2_soundboard](https://github.com/Dragonseel/push2_soundboard): play sounds and loops via pressing buttons on the Ableton Push2 midi controller
 
 ## License
 

@@ -14,12 +14,13 @@ use std::{error, thread, time};
 
 fn main() -> Result<(), Box<dyn error::Error>> {
     let mut display = Push2Display::new()?;
+    let text_style = MonoTextStyle::new(&FONT_10X20, Bgr565::WHITE);
 
     let mut position = Point::new(0, 70);
     let mut step = 4;
     loop {
         display.clear(Bgr565::BLACK)?;
-        let text_style = MonoTextStyle::new(&FONT_10X20, Bgr565::WHITE);
+
         Rectangle::new(Point::zero(), display.size())
             .into_styled(PrimitiveStyle::with_stroke(Bgr565::WHITE, 1))
             .draw(&mut display)?;
